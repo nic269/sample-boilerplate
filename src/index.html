@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="<%= htmlWebpackPlugin.options.metadata.region %>">
+<head>
+    <title><%= htmlWebpackPlugin.options.title %></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta charset="UTF-8">
+    <meta property="og:title" content="<%= htmlWebpackPlugin.options.title %>" />
+    <meta property="og:description" content="<%= htmlWebpackPlugin.options.metadata.ogDesc %>" />
+    <meta property="og:image" content="<%= htmlWebpackPlugin.options.metadata.ogImage %>" />
+</head>
+<body>
+    <!-- Start application -->
+    <div id="root"></div>
+    <!-- End application -->
+</body>
+</html>
