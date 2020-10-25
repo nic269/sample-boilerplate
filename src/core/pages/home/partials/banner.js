@@ -59,7 +59,7 @@ const Banner = () => {
         </div>
       </TopNav>
       <CarouselWrapper>
-        <Carousel autoplaySpeed={3000}>
+        <Carousel autoplay autoplaySpeed={3000}>
           {top3NowPlayingMovies.length > 0 && top3NowPlayingMovies.map((movie) => (
             <CarouselItem key={movie.id}>
               <CarouselImg src={`${IMG_END_POINT}/original${movie.backdrop_path}`} alt={movie.title} />
