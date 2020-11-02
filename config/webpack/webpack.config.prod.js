@@ -52,29 +52,28 @@ module.exports = merge(webpackConfigCommon, {
   ],
   optimization: {
     minimize: true,
-    minimizer: [
+    minimizer:[
       new TerserPlugin({
+        test: /\.js(\?.*)?$/i,
+        exclude: /[\\/]node_modules[\\/]/,
+        parallel: true,
         terserOptions: {
-          warnings: false,
+          mangle: true,
+          parse: {},
           compress: {
             comparisons: false,
           },
-          parse: {},
-          mangle: true,
-          output: {
+          format: {
             comments: false,
-            ascii_only: true,
           },
         },
-        parallel: true,
-        cache: true,
-        sourceMap: true,
-      }),
+      })
     ],
     sideEffects: true,
     concatenateModules: true,
     runtimeChunk: 'single',
-    moduleIds: 'hashed',
+    moduleIds: 'deterministic',
+    chunkIds: 'deterministic',
     splitChunks: {
       chunks: 'all',
       minChunks: 1,
