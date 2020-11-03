@@ -7,10 +7,10 @@ const {
   SRC_DIR,
   DEST_DIR,
   PUBLIC_PATH,
-  APP_FILE_PATH,
+  APP_LOADER_PATH,
   IE11_POLYFILL_PATH,
 } = require('./constants')
-const themeVariables = require('../../src/core/styles/theme/theme')
+const antdThemeVariables = require('../../src/core/styles/3rd-parties/antd-theme-variables')
 
 module.exports = {
   context: SRC_DIR,
@@ -18,7 +18,7 @@ module.exports = {
   entry: {
     app: [
       IE11_POLYFILL_PATH,
-      APP_FILE_PATH
+      APP_LOADER_PATH
     ]
   },
   output: {
@@ -29,7 +29,7 @@ module.exports = {
     rules: [
       {
         test: /\.(js|jsx)$/,
-        exclude: /node_modules/,
+        exclude: /[\\/]node_modules[\\/]/,
         use: {
           loader: 'babel-loader'
         }
@@ -47,7 +47,7 @@ module.exports = {
             loader: 'less-loader',
             options: {
               lessOptions: { // If you are using less-loader@5 please spread the lessOptions to options directly
-                modifyVars: themeVariables,
+                modifyVars: antdThemeVariables,
                 javascriptEnabled: true,
               },
             },
@@ -57,7 +57,7 @@ module.exports = {
       {
         // Preprocess 3rd party .css files located in node_modules
         test: /\.css$/,
-        include: /node_modules/,
+        include: /[\\/]node_modules[\\/]/,
         use: ['style-loader', 'css-loader'],
       },
       {

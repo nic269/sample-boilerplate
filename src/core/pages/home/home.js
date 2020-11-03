@@ -19,7 +19,7 @@ import { makeSelectMovieGenreOptions } from './selectors'
 import useMount from '../../hooks/useMount'
 
 // Styled components
-import { GContainer } from '../../styles/global-styles'
+import { GContainer } from '../../styles/global'
 import { Select, GridView, ListView } from './home.styled'
 
 const { TabPane } = Tabs

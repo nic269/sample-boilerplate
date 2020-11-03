@@ -1,24 +1,28 @@
 import React from 'react'
 import { Switch, Route } from 'react-router-dom'
+import { ThemeProvider } from 'styled-components'
 
 // UI-Components, Pages, Business-Components
 import Home from '../home/home'
 import NotFound from '../not-found/not-found'
 import Footer from '../../business-components/footer/footer'
 
-// Styled Components
+// Styled
 import { Container } from './styled-components'
-import GlobalStyles from '../../styles/global-styles'
+import GlobalStyles from '../../styles/global'
+import themeDefault from '../../styles/theme/default'
 
 const Application = () => (
-  <Container>
-    <Switch>
-      <Route exact path="/" component={Home} />
-      <Route path="" component={NotFound} />
-    </Switch>
-    <Footer />
-    <GlobalStyles />
-  </Container>
+  <ThemeProvider theme={themeDefault} >
+    <Container>
+      <Switch>
+        <Route exact path="/" component={Home} />
+        <Route path="" component={NotFound} />
+      </Switch>
+      <Footer />
+      <GlobalStyles />
+    </Container>
+  </ThemeProvider>
 )
 
 export default Application

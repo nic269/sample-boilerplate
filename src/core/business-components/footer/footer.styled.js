@@ -1,6 +1,5 @@
 import styled from 'styled-components'
 
-import theme from '../../styles/theme/theme'
 import proximity from '../../styles/mixins/proximity'
 import device from '../../styles/device/device'
 
@@ -8,7 +7,7 @@ export const FooterWrapper = styled.div`
   background: #fff;
   padding-top: ${proximity(7)};
   height: 297px;
-  border-top: 1px solid ${theme["border-color-base"]};
+  border-top: 1px solid ${(props) => props.theme.borderColorBase};
   margin-top: ${proximity(7)};
 
   .ant-divider-horizontal {
@@ -33,21 +32,21 @@ export const FooterNav = styled.div`
   display: flex;
 
   span {
-    font-size: ${theme["font-size-sm"]};
+    font-size: ${(props) => props.theme.fontSizeSm};
 
     &:hover {
       cursor: pointer;
-      color: ${theme["link-color"]};
+      color: ${(props) => props.theme.linkColor};
     }
   }
 `
 
 export const FooterCopyRight = styled.p`
-  font-size: ${theme["font-size-sm"]};
+  font-size: ${(props) => props.theme.fontSizeSm};
   color: #d8d8d8;
 
   @media ${device.mobile} {
-    font-size: ${theme["font-size-xs"]};
+    font-size: ${(props) => props.theme.fontSizeXs};
   }
 `
 

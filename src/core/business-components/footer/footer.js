@@ -12,7 +12,7 @@ import {
   SpaceBetweenWrapper,
   IconWrapper,
 } from './footer.styled'
-import { GContainer } from '../../styles/global-styles'
+import { GContainer } from '../../styles/global'
 
 // Assets
 import faIcon from '../../../assets/images/fa-icon.png'

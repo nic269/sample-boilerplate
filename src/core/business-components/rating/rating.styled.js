@@ -1,6 +1,5 @@
 import styled from 'styled-components'
 
-import theme from '../../styles/theme/theme'
 import proximity from '../../styles/mixins/proximity'
 
 export const RatingWrapper = styled.div`
@@ -8,21 +7,21 @@ export const RatingWrapper = styled.div`
   background: #0f0f14;
   border: 1px solid #444;
   padding: ${proximity(4)} ${proximity(7)};
-  border-radius: ${theme["border-radius-base"]};
+  border-radius: ${(props) => props.theme.borderRadiusBase};
 
   .ant-rate {
-    color: ${theme["primary-color"]};
+    color: ${(props) => props.theme.primaryColor};
   }
 `
 
 export const RatingDesc = styled.p`
   margin-bottom: 0;
   color: #868686;
-  font-size: ${theme["font-size-xs"]};
+  font-size: ${(props) => props.theme.fontSizeXs};
 `
 
 export const RatingHighlight = styled.span`
-  font-size: ${theme["font-size-base"]};
+  font-size: ${(props) => props.theme.fontSizeBase};
   color: white;
   display: inline-block;
   margin-right: ${proximity(2)};
@@ -34,5 +33,5 @@ export const RatingValue = styled.span`
   border: 1px solid #444;
   background-color: #000;
   padding: 0 ${proximity(2)};
-  font-size: ${theme["font-size-xs"]};
+  font-size: ${(props) => props.theme.fontSizeXs};
 `

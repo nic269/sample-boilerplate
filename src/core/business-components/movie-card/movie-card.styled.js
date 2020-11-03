@@ -1,7 +1,6 @@
 import styled from 'styled-components'
 import { Card } from 'antd'
 
-import theme from '../../styles/theme/theme'
 import proximity from '../../styles/mixins/proximity'
 
 const { Meta } = Card
@@ -44,9 +43,9 @@ export const MovieCardMeta = styled(Meta)`
 
 export const MovieCardRating = styled.span`
   display: inline-block;
-  border: 1px solid ${theme["primary-color"]};
+  border: 1px solid ${(props) => props.theme.primaryColor};
   padding: ${proximity(3)} ${proximity(4)};
-  border-radius: ${theme["border-radius-base"]};
-  color: ${theme["primary-color"]};
+  border-radius: ${(props) => props.theme.borderRadiusBase};
+  color: ${(props) => props.theme.primaryColor};
   line-height: 1;
 `

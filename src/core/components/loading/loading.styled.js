@@ -1,6 +1,5 @@
 import styled from 'styled-components'
 
-import theme from '../../styles/theme/theme'
 import proximity from '../../styles/mixins/proximity'
 
 export const LoadingWrapper = styled.div`
@@ -18,6 +17,6 @@ export const LoadingWrapper = styled.div`
   .ant-spin-text {
     color: #d8d8d8;
     text-transform: uppercase;
-    font-size: ${theme["font-size-sm"]};
+    font-size: ${(props) => props.theme.fontSizeSm};
   }
 `

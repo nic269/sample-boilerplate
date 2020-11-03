@@ -2,8 +2,7 @@ import styled from 'styled-components'
 import { Button as AntdButton } from 'antd'
 
 // Styled
-import { GContainer } from '../../../styles/global-styles'
-import theme from '../../../styles/theme/theme'
+import { GContainer } from '../../../styles/global'
 import device from '../../../styles/device/device'
 import proximity from '../../../styles/mixins/proximity'
 
@@ -41,13 +40,13 @@ export const CarouselWrapper = styled.div`
       width: 38px;
 
       button {
-        background: ${theme["primary-color"]};
+        background: ${(props) => props.theme.primaryColor};
       }
     }
 
     button {
       height: 10px;
-      border-radius: ${theme["border-radius-base"]};
+      border-radius: ${(props) => props.theme.borderRadiusBase};
       background: #d8d8d8;
       opacity: 1;
     }
@@ -109,7 +108,7 @@ export const CarouselDescription = styled.div`
   margin-bottom: ${proximity(7)};
 
   @media ${device.mobile} {
-    font-size: ${theme["font-size-sm"]};
+    font-size: ${(props) => props.theme.fontSizeSm};
 
     .ant-space {
       display: block;
@@ -140,11 +139,11 @@ export const  ButtonText = styled(AntdButton)`
   &:hover,
   &:active,
   &:focus {
-    color: ${theme["primary-color"]};
+    color: ${(props) => props.theme.primaryColor};
   }
 
   @media ${device.mobile} {
-    font-size: ${theme["font-size-xs"]};
+    font-size: ${(props) => props.theme.fontSizeXs};
     padding: ${proximity(1)} ${proximity(4)};
     height: 26px;
   }
@@ -155,7 +154,7 @@ export const Button = styled(AntdButton)`
   font-weight: 300;
 
   @media ${device.mobile} {
-    font-size: ${theme["font-size-xs"]};
+    font-size: ${(props) => props.theme.fontSizeXs};
     padding: ${proximity(1)} ${proximity(4)};
     height: 26px;
   }
