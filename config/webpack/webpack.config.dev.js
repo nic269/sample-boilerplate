@@ -3,7 +3,7 @@ const CircularDependencyPlugin = require('circular-dependency-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 const webpackConfigCommon = require('./webpack.config.common')
-const { SRC_DIR, PUBLIC_PATH } = require('./constants')
+const { SRC_DIR, PUBLIC_PATH, NODE_MODULES_REGX } = require('./constants')
 
 module.exports = merge(webpackConfigCommon, {
   mode: 'development',
@@ -27,7 +27,7 @@ module.exports = merge(webpackConfigCommon, {
       cache: true,
     }),
     new CircularDependencyPlugin({
-      exclude: /[\\/]node_modules[\\/]/, // exclude node_modules
+      exclude: NODE_MODULES_REGX,
       failOnError: false, // show a warning when there is a circular dependency
     }),
   ],

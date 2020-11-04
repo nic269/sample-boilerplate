@@ -8,7 +8,7 @@ import NotFound from '../not-found/not-found'
 import Footer from '../../business-components/footer/footer'
 
 // Styled
-import { Container } from './styled-components'
+import { Container } from './application.styled'
 import GlobalStyles from '../../styles/global'
 import themeDefault from '../../styles/theme/default'
 

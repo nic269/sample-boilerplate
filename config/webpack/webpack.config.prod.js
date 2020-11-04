@@ -5,7 +5,7 @@ const CompressionPlugin = require('compression-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 const webpackConfigCommon = require('./webpack.config.common')
-const { SRC_DIR } = require('./constants')
+const { SRC_DIR, NODE_MODULES_REGX } = require('./constants')
 
 module.exports = merge(webpackConfigCommon, {
   mode: 'production',
@@ -55,7 +55,7 @@ module.exports = merge(webpackConfigCommon, {
     minimizer:[
       new TerserPlugin({
         test: /\.js(\?.*)?$/i,
-        exclude: /[\\/]node_modules[\\/]/,
+        exclude: NODE_MODULES_REGX,
         parallel: true,
         terserOptions: {
           mangle: true,
@@ -81,12 +81,12 @@ module.exports = merge(webpackConfigCommon, {
       minSize: 0,
       cacheGroups: {
         vendor: {
-          test: /[\\/]node_modules[\\/]/,
+          test: NODE_MODULES_REGX,
           name(module) {
             const packageName = module.context.match(
               /[\\/]node_modules[\\/](.*?)([\\/]|$)/,
             )[1]
-            return `npm.${packageName.replace('@', '')}`
+            return `module.${packageName.replace('@', '')}`
           },
         },
       },

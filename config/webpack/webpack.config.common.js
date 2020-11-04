@@ -9,6 +9,7 @@ const {
   PUBLIC_PATH,
   APP_LOADER_PATH,
   IE11_POLYFILL_PATH,
+  NODE_MODULES_REGX,
 } = require('./constants')
 const antdThemeVariables = require('../../src/core/styles/3rd-parties/antd-theme-variables')
 
@@ -29,7 +30,7 @@ module.exports = {
     rules: [
       {
         test: /\.(js|jsx)$/,
-        exclude: /[\\/]node_modules[\\/]/,
+        exclude: NODE_MODULES_REGX,
         use: {
           loader: 'babel-loader'
         }
@@ -57,7 +58,7 @@ module.exports = {
       {
         // Preprocess 3rd party .css files located in node_modules
         test: /\.css$/,
-        include: /[\\/]node_modules[\\/]/,
+        include: NODE_MODULES_REGX,
         use: ['style-loader', 'css-loader'],
       },
       {
