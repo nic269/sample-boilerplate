@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-import device from '../../styles/device/device'
+import { getMediaDF as doStyleFor } from '../../styles/mixins/getDevice'
 
 export const LogoWrapper = styled.div`
   display: flex;
@@ -14,7 +14,7 @@ export const LogoWrapper = styled.div`
     color: ${(props) => (props.inverse ? '#000' : '#fff') };
     font-size: 24px;
 
-    @media ${device.mobile} {
+    ${doStyleFor('mobile')} {
       font-size: 12px;
     }
   }

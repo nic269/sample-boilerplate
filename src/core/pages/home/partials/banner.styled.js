@@ -3,7 +3,7 @@ import { Button as AntdButton } from 'antd'
 
 // Styled
 import { GContainer } from '../../../styles/global'
-import device from '../../../styles/device/device'
+import { getMediaDF as doStyleFor } from '../../../styles/mixins/getDevice'
 import proximity from '../../../styles/mixins/proximity'
 
 export const BannerWrapper = styled.div`
@@ -19,7 +19,7 @@ export const TopNav = styled(GContainer)`
   justify-content: space-between;
   z-index: 9;
 
-  @media ${device.mobile} {
+  ${doStyleFor('mobile')} {
     .ant-space-item {
       margin-right: ${proximity(3)}!important;
     }
@@ -74,7 +74,7 @@ export const CarouselInfoWrapper = styled.div`
   padding-top: ${proximity(15)};
   background-color: rgb(0, 0, 0, 0.3);
 
-  @media ${device.mobile} {
+  ${doStyleFor('mobile')} {
     padding-top: ${proximity(5)};
   }
 `
@@ -83,7 +83,7 @@ export const CarouselInfo = styled(GContainer)`
   display: flex;
   justify-content: space-between;
 
-  @media ${device.mobile} {
+  ${doStyleFor('mobile')} {
     display: block;
   }
 `
@@ -95,7 +95,7 @@ export const CarouselTitle = styled.h2`
   margin-bottom: 0;
   font-size: 2em;
 
-  @media ${device.mobile} {
+  ${doStyleFor('mobile')} {
     font-size: 1.5em;
     overflow: hidden;
     white-space: nowrap;
@@ -107,7 +107,7 @@ export const CarouselDescription = styled.div`
   color: #d8d8d8;
   margin-bottom: ${proximity(7)};
 
-  @media ${device.mobile} {
+  ${doStyleFor('mobile')} {
     font-size: ${(props) => props.theme.fontSizeSm};
 
     .ant-space {
@@ -122,7 +122,7 @@ export const CarouselDescription = styled.div`
 `
 
 export const ActionWrapper = styled.div`
-  @media ${device.mobile} {
+  ${doStyleFor('mobile')} {
     .ant-space-item {
       margin-right: ${proximity(4)}!important;
     }
@@ -142,7 +142,7 @@ export const  ButtonText = styled(AntdButton)`
     color: ${(props) => props.theme.primaryColor};
   }
 
-  @media ${device.mobile} {
+  ${doStyleFor('mobile')} {
     font-size: ${(props) => props.theme.fontSizeXs};
     padding: ${proximity(1)} ${proximity(4)};
     height: 26px;
@@ -153,7 +153,7 @@ export const Button = styled(AntdButton)`
   text-transform: uppercase;
   font-weight: 300;
 
-  @media ${device.mobile} {
+  ${doStyleFor('mobile')} {
     font-size: ${(props) => props.theme.fontSizeXs};
     padding: ${proximity(1)} ${proximity(4)};
     height: 26px;
@@ -167,7 +167,7 @@ export const VerticalMiddle = styled.div`
 `
 
 export const JustDesktop = styled.div`
-  @media ${device.mobileL} {
+  ${doStyleFor('mobileL')} {
     display: none;
   }
 `

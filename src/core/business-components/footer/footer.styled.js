@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 import proximity from '../../styles/mixins/proximity'
-import device from '../../styles/device/device'
+import { getMediaDF as doStyleFor } from '../../styles/mixins/getDevice'
 
 export const FooterWrapper = styled.div`
   background: #fff;
@@ -14,7 +14,7 @@ export const FooterWrapper = styled.div`
     margin: ${proximity(4)} 0;
   }
 
-  @media ${device.mobile} {
+  ${doStyleFor('mobile')} {
     height: 200px;
 
     .ant-space-item {
@@ -45,7 +45,7 @@ export const FooterCopyRight = styled.p`
   font-size: ${(props) => props.theme.fontSizeSm};
   color: #d8d8d8;
 
-  @media ${device.mobile} {
+  ${doStyleFor('mobile')} {
     font-size: ${(props) => props.theme.fontSizeXs};
   }
 `
@@ -61,7 +61,7 @@ export const IconWrapper = styled.div`
     cursor: pointer;
   }
 
-  @media ${device.mobile} {
+  ${doStyleFor('mobile')} {
     width: 15px;
   }
 `

@@ -1,7 +1,7 @@
 import styled, { createGlobalStyle } from 'styled-components'
 
 import proximity from './mixins/proximity'
-import device from './device/device'
+import { getMediaDF as doStyleFor } from './mixins/getDevice'
 
 const GlobalStyle = createGlobalStyle`
   html,
@@ -35,7 +35,7 @@ export const GContainer = styled.div`
   margin: 0 auto;
   position: relative;
 
-  @media ${device.mobile} {
+  ${doStyleFor('mobile')} {
     padding-left: ${proximity(7)};
     padding-right: ${proximity(7)};
   }
